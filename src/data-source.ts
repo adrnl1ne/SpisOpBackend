@@ -1,6 +1,8 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { FoodPost } from './entities/FoodPost'; // Example entity
+import { FoodPost } from './entities/FoodPost';
+import { Allergy } from './entities/Allergy';
+import { Address } from "./entities/Address";
 // Import other entities as necessary
 
 export const AppDataSource = new DataSource({
@@ -12,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [FoodPost],    // List all entities here
+  entities: [FoodPost, Allergy, Address],    // List all entities here
   subscribers: [],
   migrations: [],
 });
